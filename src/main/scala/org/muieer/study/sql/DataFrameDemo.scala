@@ -3,7 +3,6 @@ package org.muieer.study.sql
 import org.apache.spark.SparkContext
 import org.apache.spark.sql._
 import org.apache.spark.sql.types._
-import org.muieer.study
 import org.muieer.study.{buildLocalSparkEnv, outPath, sc, spark, userPath}
 
 
