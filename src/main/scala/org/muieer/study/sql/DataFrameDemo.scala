@@ -44,12 +44,29 @@ object DataFrameDemo {
 
   }
 
+  def buildDataFrameFromCSVFile(sc: SparkContext, spark: SparkSession): Unit = {
+
+    val schema = StructType( Array(StructField("name", StringType),StructField("age", IntegerType)))
+    val dataFrame = spark.read.format("csv")
+      .schema(schema)
+      .option("header", true) // 首行为列属性
+      .option("mode", "dropMalformed") // 丢弃不正确的数据
+      .load(s"$userPath/temp/test.csv")
+
+    dataFrame.show()
+    println(s"${dataFrame.count()}")
+    println(s"${dataFrame.select("name").collect().toList.toString()}")
+
+  }
+
+
 
   def main(args: Array[String]): Unit = {
 
     buildLocalSparkEnv()
     buildDataFrameFromRDD(sc, spark)
     buildDataFrameFromParquetFile(sc, spark)
+    buildDataFrameFromCSVFile(sc, spark)
 
   }
 }
