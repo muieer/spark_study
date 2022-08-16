@@ -6,7 +6,7 @@ import org.apache.spark.sql.types._
 import org.muieer.study.{buildLocalSparkEnv, outPath, sc, spark, userPath}
 
 
-object DataFrameDemo {
+object BuildDataFrameDemo {
 
   def buildDataFrameFromRDD(sc: SparkContext, spark: SparkSession): Unit = {
 
@@ -69,4 +69,5 @@ object DataFrameDemo {
     buildDataFrameFromCSVFile(sc, spark)
 
   }
+
 }
