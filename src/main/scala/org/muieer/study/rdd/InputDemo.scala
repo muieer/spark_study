@@ -15,7 +15,9 @@ object InputDemo {
 
   def callWholeTextFiles(spark: SparkSession) = {
 
+    path = "/Users/muieer/temp"
     val sc = spark.sparkContext
     sc.wholeTextFiles(s"$path/*", 100)
+      .count()
   }
 }
