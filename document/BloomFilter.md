@@ -10,7 +10,6 @@
 阅读代码为 `org.apache.spark.util.sketch.BloomFilter`
 ### 整体架构
 接口BoomFilter对方法做了抽象和约束，BoomFilterImpl是实现类，BitArray是底层数据结构，充当位图作用
-![架构](../image/22091401.png)
 ### 创建
 创建阶段，调用静态方法`create`，根据预期添加的个数和可以容忍的最大读取错误率，算出需要的bit数和需要的哈希次数  
 创建最终调用的方法如下
