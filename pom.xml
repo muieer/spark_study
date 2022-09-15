@@ -39,7 +39,7 @@
             <artifactId>guava</artifactId>
             <version>31.1-jre</version>
             <!--            Spark 内置 guava-14.0.1.jar -->
-            <scope>provided</scope>
+<!--            <scope>provided</scope>-->
         </dependency>
     </dependencies>
 

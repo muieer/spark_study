@@ -6,7 +6,7 @@ object App {
 
     println(
       s"""
-         |${BloomFilterUseDemo.demo()}
+         |${BloomFilterUseDemo.demoBySparkImpl()}
          |""".stripMargin)
   }
 }
