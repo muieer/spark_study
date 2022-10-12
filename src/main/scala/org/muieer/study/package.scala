@@ -13,7 +13,7 @@ package object study {
   def buildLocalSparkEnv(): Unit = {
 
     val sparkConfig = new SparkConf
-    sparkConfig.set("spark.memory.fraction", "0.9")
+    sparkConfig.set("spark.memory.fraction", "0.6")
 
     spark =  SparkSession.builder()
       .appName("study_" + System.currentTimeMillis())
