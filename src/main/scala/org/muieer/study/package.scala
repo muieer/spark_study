@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 package object study {
 
-  var spark: SparkSession= _
+  var sparkSession: SparkSession= _
   var sc: SparkContext = _
   val userPath = "/Users/muieer"
   val outPath = s"$userPath/temp"
@@ -15,12 +15,12 @@ package object study {
     val sparkConfig = new SparkConf
     sparkConfig.set("spark.memory.fraction", "0.6")
 
-    spark =  SparkSession.builder()
+    sparkSession =  SparkSession.builder()
       .appName("study_" + System.currentTimeMillis())
       .master("local")
       .config(sparkConfig)
       .getOrCreate()
-    sc = spark.sparkContext
+    sc = sparkSession.sparkContext
   }
 
 }

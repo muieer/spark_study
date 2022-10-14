@@ -4,7 +4,7 @@ import org.apache.spark.SparkContext
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
 import org.apache.spark.sql.{Row, SaveMode, SparkSession}
 import org.apache.spark.sql.functions._
-import org.muieer.study.{buildLocalSparkEnv, outPath, sc, spark}
+import org.muieer.study.{buildLocalSparkEnv, outPath, sc, sparkSession}
 
 object ProcessDataFrameByFunctionDemo {
 
@@ -70,8 +70,8 @@ object ProcessDataFrameByFunctionDemo {
 
     buildLocalSparkEnv()
 
-    computeDataFrame(sc, spark)
-    saveDFWithCSV(sc, spark)
+    computeDataFrame(sc, sparkSession)
+    saveDFWithCSV(sc, sparkSession)
   }
 
 }

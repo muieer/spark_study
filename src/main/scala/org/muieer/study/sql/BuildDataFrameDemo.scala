@@ -3,7 +3,7 @@ package org.muieer.study.sql
 import org.apache.spark.SparkContext
 import org.apache.spark.sql._
 import org.apache.spark.sql.types._
-import org.muieer.study.{buildLocalSparkEnv, outPath, sc, spark, userPath}
+import org.muieer.study.{buildLocalSparkEnv, outPath, sc, sparkSession, userPath}
 
 
 object BuildDataFrameDemo {
@@ -64,9 +64,9 @@ object BuildDataFrameDemo {
   def main(args: Array[String]): Unit = {
 
     buildLocalSparkEnv()
-    buildDataFrameFromRDD(sc, spark)
-    buildDataFrameFromParquetFile(sc, spark)
-    buildDataFrameFromCSVFile(sc, spark)
+    buildDataFrameFromRDD(sc, sparkSession)
+    buildDataFrameFromParquetFile(sc, sparkSession)
+    buildDataFrameFromCSVFile(sc, sparkSession)
 
   }
 
