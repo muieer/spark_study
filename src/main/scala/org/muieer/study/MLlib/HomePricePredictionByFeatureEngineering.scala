@@ -3,9 +3,8 @@ package org.muieer.study.MLlib
 import org.apache.spark.sql.functions.{col, min}
 import org.apache.spark.sql.types.IntegerType
 import org.apache.spark.ml.feature.{ChiSqSelector, MinMaxScaler, StringIndexer, VectorAssembler}
-import org.apache.spark.ml.regression.LinearRegression
 import org.apache.spark.sql.DataFrame
-import org.muieer.study.spark
+import org.muieer.study.{sparkSession => spark}
 
 import scala.collection.mutable.ArrayBuffer
 

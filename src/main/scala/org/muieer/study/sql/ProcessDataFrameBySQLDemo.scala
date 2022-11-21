@@ -3,7 +3,7 @@ package org.muieer.study.sql
 import org.apache.spark.SparkContext
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.apache.spark.sql.types.{IntegerType, StringType, StructField, StructType}
-import org.muieer.study.{buildLocalSparkEnv, sc, spark}
+import org.muieer.study.{buildLocalSparkEnv, sc, spark, sparkSession}
 //import
 
 object ProcessDataFrameBySQLDemo {
@@ -28,7 +28,7 @@ object ProcessDataFrameBySQLDemo {
   def main(args: Array[String]): Unit = {
 
     buildLocalSparkEnv()
-    demo(sc, spark)
+    demo(sc, sparkSession)
   }
 
 }
