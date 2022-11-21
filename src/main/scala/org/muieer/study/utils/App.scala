@@ -1,7 +1,6 @@
 package org.muieer.study.utils
 
 import it.unimi.dsi.fastutil.objects.ObjectArrayList
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.util.SizeEstimator
 import org.muieer.study.{sc, sparkSession}
 
@@ -32,8 +31,8 @@ object App {
     df.printSchema()
     df.show()
 
-    val sp = sparkSession
-    import sp.implicits._
+    val sp = sparkSession.implicits
+    import sp._
 
     // Spark SQL 支持限定类型的数据
     df.select("value")
@@ -47,7 +46,7 @@ object App {
 
     println(
       s"""
-         |获取对象内训占用
+         |获取对象内存占用
          |${SizeEstimator.estimate(map)}
          |${SizeEstimator.estimate(num)}
          |${SizeEstimator.estimate(list)}
